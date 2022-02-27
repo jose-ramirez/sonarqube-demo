@@ -1,0 +1,15 @@
+kind: pipeline
+name: default
+type: docker
+
+steps:
+  - name: build
+    image: 3-jdk-11-slim
+    pull: if-not-exists
+    commands:
+    - mvn clean package
+  - name: test
+    image: 3-jdk-11-slim
+    pull: if-not-exists
+    commands:
+      - mvn test
