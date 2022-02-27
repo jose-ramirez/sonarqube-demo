@@ -13,3 +13,6 @@ steps:
     pull: if-not-exists
     commands:
       - mvn test
+trigger:
+  branch:
+    - master
